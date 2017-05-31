@@ -98,9 +98,9 @@
       </li>
     </ul>
     <div class="footer">
-      Todo: <span id="todo-count">1</span> •
+      Todo: <span id="todo-count">0</span> •
       Done: <span id="completed-count">0</span> •
-      Total: <span id="total-count">7</span>
+      Total: <span id="total-count">0</span>
     </div>
   </div>
 
@@ -122,6 +122,21 @@
       todoCount.innerHTML = uncompletedTodos;
     }
     updateCounters();
+
+    function toggleDone() {
+    var checkbox = this;
+
+      // check the checked status of the checkbox
+      if (checkbox.checked) {
+      // the "completed" class is set on the parent element, the <li>
+      checkbox.parentElement.className = "todo completed";
+      } else {
+      checkbox.parentElement.className = "todo";
+    }
+
+    updateCounters();
+    }
+
   </script>
 
 </body>
